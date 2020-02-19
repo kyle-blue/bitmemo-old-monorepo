@@ -1,0 +1,7 @@
+{
+    "eslint.enable": true,
+    "eslint.workingDirectories": [
+        "./node-backend",
+        "./react-frontend"
+    ]
+}
