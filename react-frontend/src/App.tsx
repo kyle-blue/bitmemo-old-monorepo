@@ -6,6 +6,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import GlobalStyle from "./styles/GlobalStyle";
 import allReducer from "./reducers/index";
+
+import Navbar from "./components/general/Navbar";
+
 import "@babel/polyfill";
 
 function App(): React.ReactElement {
@@ -22,6 +25,7 @@ function App(): React.ReactElement {
         <Provider store={store}>
             <GlobalStyle backgroundColor="#c8eafa" color="#000" />
             <ThemeContext.Provider value={{ theme: null }}>
+                <Navbar height={1} />
                 <h1>Hello World!</h1>
             </ThemeContext.Provider>
         </Provider>

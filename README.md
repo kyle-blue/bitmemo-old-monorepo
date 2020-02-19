@@ -1,2 +1,2 @@
-# media-memo
-MediaMemo allows for the sharing of condensed thoughts and lessons regarding media; books, podcasts etc.
+# MediaMemo
+MediaMemo allows for the sharing of condensed thoughts and lessons regarding media, namely books and podcasts.

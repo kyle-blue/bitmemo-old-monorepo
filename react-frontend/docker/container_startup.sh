@@ -1,4 +1,5 @@
 #!/bin/zsh
+npm i
 
 if (( $# == 0 )); then
     echo "Running ZSH..."

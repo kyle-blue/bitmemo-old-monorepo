@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
+// Note: This is purely a development configuration. This must be modified for production
 module.exports = {
     entry: {
         app: path.resolve(__dirname, "src/App.tsx"),
@@ -52,9 +53,14 @@ module.exports = {
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
     },
+    devServer: {
+        historyApiFallback: true,
+        hot: true,
+    },
     plugins: [
         new HtmlWebpackPlugin(
             { template: path.resolve(__dirname, "src/index.html"), hash: true },
         ),
     ],
+
 };
