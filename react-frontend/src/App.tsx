@@ -1,34 +1,50 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import ReactDom from "react-dom";
 import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+import {
+    BrowserRouter as Router, Route, Switch,
+} from "react-router-dom";
+import { StylesProvider } from "@material-ui/core/styles";
 import GlobalStyle from "./styles/GlobalStyle";
 import allReducer from "./reducers/index";
-
-import Navbar from "./components/general/Navbar";
-
 import "@babel/polyfill";
+import { ThemeContext } from "./styles/GlobalUserTheme";
+
+
+import Home from "./components/Home";
+
 
 function App(): React.ReactElement {
+    let theme = useContext(ThemeContext);
     let storeEnhancers = compose(
         applyMiddleware(thunk),
         // @ts-ignore //
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     );
-    let ThemeContext = React.createContext({ theme: null });
     let store = createStore(allReducer, storeEnhancers);
 
 
+    // eslint-disable-next-line react/prop-types
+    let Providers = ({ children }): React.ReactElement => (
+        <StylesProvider injectFirst>
+            <GlobalStyle />
+            <Provider store={store}>
+                <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+            </Provider>
+        </StylesProvider>
+    );
+
     return (
-        <Provider store={store}>
-            <GlobalStyle backgroundColor="#c8eafa" color="#000" />
-            <ThemeContext.Provider value={{ theme: null }}>
-                <Navbar height={1} />
-                <h1>Hello World!</h1>
-            </ThemeContext.Provider>
-        </Provider>
+        <Providers>
+            <Router>
+                <Switch>
+                    <Route exact path="/" render={() => <Home />} />
+                </Switch>
+            </Router>
+        </Providers>
     );
 }
 ReactDom.render(<App />, document.getElementById("app"));

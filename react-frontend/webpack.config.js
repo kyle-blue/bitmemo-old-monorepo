@@ -13,14 +13,31 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.(t|j)sx?$/,
                 include: path.resolve(__dirname, "src"),
                 loader: "babel-loader",
             },
             {
                 test: /\.svg$/,
-                include: path.resolve(__dirname, "src"),
-                loader: "@svgr/webpack",
+                use: [
+                    {
+                        loader: "babel-loader",
+                    },
+                    {
+                        loader: "react-svg-loader",
+                        options: {
+                            jsx: true, // true outputs JSX tags
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: "file-loader",
+                    },
+                ],
             },
             {
                 test: /\.scss$/,
@@ -39,7 +56,7 @@ module.exports = {
                             modules: {
                                 mode: "local",
                                 localIdentName: "[path][name]__[local]--[hash:base64:5]",
-                                hashPrefix: "media-memo",
+                                hashPrefix: "bitmemo",
                             },
                         },
                     },

@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-command docker-compose run --rm --service-ports media-memo
+command docker-compose run --rm --service-ports bitmemo

@@ -1,5 +1,5 @@
 version: "3"
-# MediaMemo
+# BitMemo
 services:
   node_server:
     build:

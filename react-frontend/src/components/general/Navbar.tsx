@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
+import {
+    Button, Container, Spacer, Logo, LogoText, Wrapper,
+} from "./styles/NavBarStyles";
+// @ts-ignore
+import logo from "../../assets/images/logo.png";
+import { ThemeContext, ThemeType } from "../../styles/GlobalUserTheme";
 
 interface Props {
     height: number;
 }
 
 function Navbar(Props: props): React.ReactElement {
-    const navItems = [<li key="1">Home</li>, <li key="2">About</li>];
+    let theme: ThemeType["navbar"] = useContext(ThemeContext).navbar;
 
+    const navItems = [
+        <Button key="NavHome">Home</Button>,
+        <Button key="NavAbout">About</Button>,
+        <Button key="NavContact">Contact</Button>,
+        <Button key="NavSearch">Search</Button>,
+    ];
 
     return (
-        <section id="navbar">
-            {
-                navItems
-            }
-        </section>
+        <Wrapper>
+            <Container theme={theme}>
+                <Logo src={logo} />
+                <LogoText>BitMemo</LogoText>
+                <Spacer />
+                {
+                    navItems
+                }
+            </Container>
+        </Wrapper>
     );
 }
 
