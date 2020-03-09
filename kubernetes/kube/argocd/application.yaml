@@ -1,0 +1,24 @@
+---
+apiVersion: argoProj.io/v1alpha1
+kind: Application
+metadata:
+  name: bitmemo
+  labels:
+    name: bitmemo
+  namespace: argocd
+spec:
+  project: default
+  # Source of the application manifests
+  source:
+    repoURL: https://github.com/bigboiblue/bitmemo.git
+    targetRevision: HEAD
+    path: kubernetes/app
+  # directory
+  directory:
+    recurse: true
+  # Sync policy
+  syncPolicy:
+    automated:
+      prune: false # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+    validate: true # Validate resources before applying to k8s, defaults to true.
