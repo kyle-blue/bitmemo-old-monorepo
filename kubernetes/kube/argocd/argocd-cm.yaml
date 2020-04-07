@@ -9,8 +9,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   repositories: |
-    - url: https://github.com/bigboiblue/bitmemo.git
+    - url: https://gitlab.com/bigboiblue/bitmemo.git
       username: auth
       passwordSecret:
-        name: github-token
+        name: gitlab-token
         key: token

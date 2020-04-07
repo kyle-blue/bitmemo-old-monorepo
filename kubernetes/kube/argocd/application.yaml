@@ -10,9 +10,9 @@ spec:
   project: default
   # Source of the application manifests
   source:
-    repoURL: https://github.com/bigboiblue/bitmemo.git
+    repoURL: https://gitlab.com/bigboiblue/bitmemo.git
     targetRevision: HEAD
-    path: kubernetes/app
+    path: kubernetes
   # directory
   directory:
     recurse: true
