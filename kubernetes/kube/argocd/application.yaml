@@ -1,21 +1,29 @@
----
-apiVersion: argoProj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
+
 metadata:
   name: bitmemo
   labels:
     name: bitmemo
   namespace: argocd
+
 spec:
   project: default
+
   # Source of the application manifests
   source:
     repoURL: https://gitlab.com/bigboiblue/bitmemo.git
     targetRevision: HEAD
     path: kubernetes
+
   # directory
   directory:
     recurse: true
+
+  destination:
+    server: https://kubernetes.default.svc # Deploy to same cluster as argo is running in
+    namespace: bitmemo
+
   # Sync policy
   syncPolicy:
     automated:
