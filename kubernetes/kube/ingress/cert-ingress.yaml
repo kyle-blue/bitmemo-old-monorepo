@@ -8,5 +8,8 @@ spec:
   rules:
     - http:
         paths: # No host specified. Matches all incoming requests
-          - /\.well-known/acme-challenge/* # This is regex
+          - path: /\.well-known/acme-challenge/* # This is regex
+            backend:
+              serviceName: certificate-renewal
+              servicePort: 80
   # tls: <-- Not required, this is to aquire the certificate
