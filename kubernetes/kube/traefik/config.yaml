@@ -82,6 +82,9 @@ data:
   traefik-config.toml: |-
     defaultEntryPoints = ["http","https"]
 
+    [api]
+      entryPoint = "traefik"
+
     [entryPoints]
 
       [entryPoints.http]
@@ -95,3 +98,10 @@ data:
           [[entryPoints.https.tls.certificates]]
           CertFile = "/ssl/tls.crt"
           KeyFile = "/ssl/tls.key"
+
+      [entrypoints.traefik]
+      address = ":8080"
+        [entryPoints.traefik.tls]
+            [[entryPoints.https.tls.certificates]]
+            CertFile = "/ssl/tls.crt"
+            KeyFile = "/ssl/tls.key"
