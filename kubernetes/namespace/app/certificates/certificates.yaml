@@ -1,0 +1,83 @@
+# apiVersion: v1
+# kind: Secret
+# type: generic
+# metadata:
+#   name: certificate-secret
+# data:
+#   # Generally cert.pem and privkey.pem are needed by webservers for https
+#   tls.crt: "" # empty since this will be filled by job
+#   tls.key: ""
+apiVersion: v1
+data:
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZTekNDQkRPZ0F3SUJBZ0lTQThOdUpSU2Z2U1hQRXVITUJLWTlDK3lJTUEwR0NTcUdTSWIzRFFFQkN3VUEKTUVveEN6QUpCZ05WQkFZVEFsVlRNUll3RkFZRFZRUUtFdzFNWlhRbmN5QkZibU55ZVhCME1TTXdJUVlEVlFRRApFeHBNWlhRbmN5QkZibU55ZVhCMElFRjFkR2h2Y21sMGVTQllNekFlRncweU1EQTBNVEF3TmpJME1EUmFGdzB5Ck1EQTNNRGt3TmpJME1EUmFNQlV4RXpBUkJnTlZCQU1UQ21KcGRHMWxiVzh1YVc4d2dnRWlNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFET3FZMEtCZ1NOdWZhVUlUamlabWNLN3dOb1c3cEFTMFBLVTFRYgplbFRNanVobjNaZWRydjcydmRjTnF0cjg2L2hzMlh3c1hlSTlCckxpcmFibmVDQUpPT1R3M2cycjhvbm1ucCtnCjZjc0daRnZaVmt6NVR0bTUrNVdZMGVTbk5WWWxsMzFQQytaSWJRZEFDd3k3Q2xtL2o0VDZNTEMxdEZ2aDlmbmsKQnJMdTJjKytvaXU5TGZzVjVjV1FVSjJBdmpsem4zVkVLMDlFRDZKbFRxTHl6RXdtaG15ZTMySzltWU9ka3pIQQprOVdlRHNzV1VkbjZFeU5vM3pTUlM0dUEvbzJDUHlsQmlCZXMveG52QU5HbGxxamNjRDRXaW16bTczdnFOTWlCCnJ3RXFWbVlUREx3a1JITDhZa0N4Z013SENlVUMyS3NWSERVUHg0VnBNbDliQ1FFTkFnTUJBQUdqZ2dKZU1JSUMKV2pBT0JnTlZIUThCQWY4RUJBTUNCYUF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNQXdHQTFVZEV3RUIvd1FDTUFBd0hRWURWUjBPQkJZRUZEb1orbzJ6T1grbHBMRUpxVVROWFdjZFRDeGVNQjhHCkExVWRJd1FZTUJhQUZLaEthbU1FZmQyNjV0RTV0NlpGWmUvenFPeWhNRzhHQ0NzR0FRVUZCd0VCQkdNd1lUQXUKQmdnckJnRUZCUWN3QVlZaWFIUjBjRG92TDI5amMzQXVhVzUwTFhnekxteGxkSE5sYm1OeWVYQjBMbTl5WnpBdgpCZ2dyQmdFRkJRY3dBb1lqYUhSMGNEb3ZMMk5sY25RdWFXNTBMWGd6TG14bGRITmxibU55ZVhCMExtOXlaeTh3CkZRWURWUjBSQkE0d0RJSUtZbWwwYldWdGJ5NXBiekJNQmdOVkhTQUVSVEJETUFnR0JtZUJEQUVDQVRBM0Jnc3IKQmdFRUFZTGZFd0VCQVRBb01DWUdDQ3NHQVFVRkJ3SUJGaHBvZEhSd09pOHZZM0J6TG14bGRITmxibU55ZVhCMApMbTl5WnpDQ0FRTUdDaXNHQVFRQjFua0NCQUlFZ2ZRRWdmRUE3d0IxQUc5VGRxd3g4REVaMkprQXBGRVYvM2NWCkhCSFpBc0VBS1FhTnNnaWFOOWtUQUFBQmNXTDVaOHNBQUFRREFFWXdSQUlnVDdpczJLMmcxYXgzU3lkUWF3TE0KOGpoRXhBaGRNS2hjNTZVV2VxakZLZGtDSUVYRU81bG0vSXVDSWlCWjVXMFhHNURBVkg2YW9QU3BPdXRtMTVqYwozRjJXQUhZQUI3ZGNHK1Y5YVAveHNNWWRJeFhIdXVaWGZGZVV0MnJ1dkdFNkdtblRvaHdBQUFGeFl2bG4xUUFBCkJBTUFSekJGQWlFQXRWdnVFMTBGY0NnU29PWGRmdmN5YmZyOW9DVUtwRGl1YWJ5emhmRHBlM2dDSUJidUJ2dEIKc3l0Y3VsZ1lrZmZUdUZSaDRNN081aFh1Z2tEMVR0VW5XVGNITUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFDVApNU3JMNjNNZ3B1UHBnNlRUbFkwR3VHZWg4UnZKL2tIamRnd2NnbTZ4bTkvcmlqUkVoQjRUQVJKUnN0ZENIcGtTCmZWYmo3cktoTmRiRzBrUktmMWxkclBRWjgzSWUvOTAwOFZUK1RVamhsMU0wQ000TEFBbnZFU05Qa3JySkszK1MKZit3YnBJd0VZeWFRNDhKa3ZTdWMrTjl1c0JlN25aL3hQZnNIbEV6ckdRc0ZBbzh2c21rMEFhUGM3d3RBU29xMQpSMGVXSUNsalloMFlnSFNCMmpxU2VkQk8weVRuU0l5RnU3QUQxYXZrQmNJclhEL3l5eG1RZTF2a2padG85b2R0CmhWaFVXajMzaE9MaURyRHNndlh5aHJZQ21jNzJsWHFaSU9rZ0tMZ0ZJcG9BVDU0QjdLZGlQRTZBK3dnZjNMc3oKejdVZmFMZGtXUFdIWVdKaVE1Z20KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRE9xWTBLQmdTTnVmYVUKSVRqaVptY0s3d05vVzdwQVMwUEtVMVFiZWxUTWp1aG4zWmVkcnY3MnZkY05xdHI4Ni9oczJYd3NYZUk5QnJMaQpyYWJuZUNBSk9PVHczZzJyOG9ubW5wK2c2Y3NHWkZ2WlZrejVUdG01KzVXWTBlU25OVllsbDMxUEMrWkliUWRBCkN3eTdDbG0vajRUNk1MQzF0RnZoOWZua0JyTHUyYysrb2l1OUxmc1Y1Y1dRVUoyQXZqbHpuM1ZFSzA5RUQ2SmwKVHFMeXpFd21obXllMzJLOW1ZT2RrekhBazlXZURzc1dVZG42RXlObzN6U1JTNHVBL28yQ1B5bEJpQmVzL3hudgpBTkdsbHFqY2NENFdpbXptNzN2cU5NaUJyd0VxVm1ZVERMd2tSSEw4WWtDeGdNd0hDZVVDMktzVkhEVVB4NFZwCk1sOWJDUUVOQWdNQkFBRUNnZ0VBR3lHdlhvMkRzNGVpazdmNDIrQk56dVdxTU4wNkNvN1hDNHo5RWM1eHE1bG4KY1p0cCtFMnRNMytnNkM1eUtacGhOd2ttZ0R5akl4ZnFERkI0QlJPRVFUR3kvTnhxTnhUVWZlNTlUb2JqSEtlNApWMFE1UHRIWFM4OTN5R1JsL0gzSUhZOVI2RHJMdE41N2dURHlMdXdnOUVGSFdBRmtjYmFJQ1paZGhFNU0xNGFNCmk5c2QvRXVVRnFVQW9XckRlWjVwMmpXSy9LV3RTTHpSYlRHU0ZIWEZTSTdjNUZiQi9HdW8xL1Fqa2JMWkNuSUgKTFA5cGJtS3ZoejJUK1M1RWVZK2ZSNUY4OG5CQmVjRXJNNXNYektqNVYwMTd1aVg2d0FzcUgxd0lGREZ3a09icwpacVgveWxpSkZJNUZnNHpCY2FseUU2YkRrUG9leWxWRkdRYm1LWnFqZ1FLQmdRRHV0SGtvL0Nnd3lGZlgya3BUCms2RHBqM0JYb0tMWitxZTFLbS9iY0lDTnc5ckRGdWFrRUtObGtLMGpyWlhZNndoOVZIbmVrSGNpZ0EzaEI0VC8KSUN5bzZmT1F4bWJYOW5xNVIxMXlUWllYN04ySnlqckgzRysxUjJHZ0l4NitsVUdVQnhzZXA1NElIQWFvRnZNUgpVYzJ1UXFiU3ZvSU4zY1FGWGRLK2dyR2VKUUtCZ1FEZG9yOG04NjBjODZxRGVtcVhaS3IwZUVHSEJUbGdCOFEzCnJGSWdPN21LeUd4c0pMbGNKL2tzbE9jajZ3em13eDZJMFQwU2NxYW9iS2NaZnY5alVzWDNiRnNyMHJCT2g2cHYKQ0ZRZ1pIbklSUEQrR1JXSjl1eDltdWZpQm5LYVdHWXdCWElVQTljN0FBandRMTRZRC9VTkVDVzZsNmNoOGZ0cwprNlVvSmtXZXlRS0JnUUN6MGV5Ny9VamhodXIxeHBIYmFBaitLWG85Nk5zRlRwZnNHQzN2cDA2UWZReGRqdkRzCmcwUTBETXNCWjVETXVqSEpDRXhPWjVIM3dYT3pJNUVEQ0YvY1YzR09qSWVKQlRycVBHS2U2dWU0MmswQnNnQ1oKOHV1TUtsdlc0TjRXUUNZSXQxbXN2Q1NHZzJaWVZnR0IrSmZ6UUc2ZnI3Z1ZiZ3h1NW9FTjF6S3FxUUtCZ1FDbQpLQmgrTHppYzk5L2hhYWozanJUTFNreDEyT2pHb1l2czRQZEF5d1d5a2NjVzNBRktvWDBnZXhFOTBEMS8wcy9WCmFtZ0txSUZneXZRTEhUYUJVOUN1U1VHZ2ZQZElLRlVSb0lEUk9BSkVyY3F0OUVnOWdpeVJqY3hCbXV2WDRtWFoKb250L25kR0JuZWtWbHF1NEJsNkVTSkxBYkdrVC9jR3NDSlJNb1VTWVlRS0JnRFNSTitaOHJOTS8ybDVUaHN2aQpmQkZwTTVHMnpDckdKOUhWUnVTM2kzS3VzTnl5MFEyelZYTWdLZi9GUjdPdmdJdEpCcUtDSHZkSVc1cDZEdTdSCk9iVU5xNFNUSlY0Q0d1UW5UMU92djZUTTgvRmdQeWFDemlGdmNYT080eTFhTDlEbkRhcTFuMCtOTnd6eEpsQ2QKYXQ1YlFHREh2Nm9kTUp6aThCV0lLZlNqCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
+kind: Secret
+metadata:
+  name: certificate-secret
+  namespace: app
+type: Opaque
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: certificate-renewal
+  namespace: app
+spec:
+  schedule: "0 */12 * * *" # Run once every 12 hours
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      name: certificate-renewal
+    spec:
+      backoffLimit: 3
+      template:
+        metadata:
+          name: certificate-renewal
+          labels:
+            name: certificate-renewal
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: certificate-renewal
+              image: certbot/certbot:v1.3.0
+              command: ["/bin/sh", "-c"]
+              # Below commands get certificate, and replace the old certificates in the secret
+              # The issue is that this server is not exposed. After creating traefik I will get this working
+
+              # Gonna need a traefik path for http://www.bitmemo.io/.well-known/acme-challenge to lead to here
+              args: [
+                  "printf \"a\ny\n1\" | certbot certonly --verbose --standalone -m \"kyle.blue.nuttall@gmail.com\" -d \"bitmemo.io\"", # Change "bitmemo.io" if using other website
+                  "cd /etc/letsencrypt/live/bitmemo.io/;",
+                  "sed -i '' **/*;", # This replaces all system links with their actual files
+                  "mv cert.pem tls.crt;",
+                  "mv privkey.pem tls.key;",
+                ]
+              # CREATE JSON BODY AND PUT IN CURL REQUEST
+              #AUTH_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+              #curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $AUTH_TOKEN" -X PUT https://kubernetes.default.svc/api/v1/namespaces/default/secrets/certificate-secret
+              # kubectl create secret generic certificate-secret \
+              # --from-file=./tls.key --from-file=./tls.crt --dry-run -o yaml |
+              # kubectl apply -f -
+              volumeMounts:
+                - name: certificate-volume
+                  mountPath: /etc/letsencrypt/live/bitmemo.io/ # And this
+                  readOnly: false # We want to write to the certificate
+              ports:
+                - containerPort: 80 # Expose port 80 to container
+          volumes:
+            - name: certificate-volume
+              secret:
+                secretName: certificate-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: certificate-renewal
+  namespace: app
+spec:
+  selector:
+    name: certificate-renewal
+  ports:
+    - port: 80
+      targetPort: 80

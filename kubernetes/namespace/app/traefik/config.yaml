@@ -3,13 +3,13 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: traefik-ingress-controller
-  namespace: kube-system
+  namespace: app
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: traefik-ingress-controller
-  namespace: kube-system
+  namespace: app
   labels:
     k8s-app: traefik-ingress-lb
 spec:
@@ -57,7 +57,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: traefik-ingress-service
-  namespace: kube-system
+  namespace: app
 spec:
   selector:
     k8s-app: traefik-ingress-lb
@@ -77,7 +77,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: traefik-config
-  namespace: kube-system
+  namespace: app
 data:
   traefik-config.toml: |-
     defaultEntryPoints = ["http","https"]

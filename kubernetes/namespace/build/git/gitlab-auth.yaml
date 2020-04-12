@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: gitlab-token
+  namespace: build
 type: Opaque
 data:
   token: 2i1qW9TRkid18NhxybVz
