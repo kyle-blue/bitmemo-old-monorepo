@@ -5,7 +5,7 @@ metadata:
   name: bitmemo
   labels:
     name: bitmemo
-  namespace: argocd
+  namespace: build
 
 spec:
   project: default
