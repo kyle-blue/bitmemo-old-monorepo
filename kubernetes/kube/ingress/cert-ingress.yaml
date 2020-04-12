@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: cert-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - http:
+        paths: # No host specified. Matches all incoming requests
+          - /\.well-known/acme-challenge/* # This is regex
+  # tls: <-- Not required, this is to aquire the certificate
