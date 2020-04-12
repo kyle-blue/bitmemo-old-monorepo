@@ -51,7 +51,7 @@ spec:
             secretName: certificate-secret
         - name: config
           configMap:
-            name: traefik-conf
+            name: traefik-config
 ---
 kind: Service
 apiVersion: v1
