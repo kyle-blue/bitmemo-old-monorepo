@@ -47,7 +47,7 @@ spec:
 
               # Gonna need a traefik path for http://www.bitmemo.io/.well-known/acme-challenge to lead to here
               args: [
-                  "printf \"a\ny\n1\" | certbot certonly --verbose --standalone -m \"kyle.blue.nuttall@gmail.com\" -d \"bitmemo.io\"", # Change "bitmemo.io" if using other website
+                  "printf \"a\ny\n1\" | certbot certonly --verbose --manual -m \"kyle.blue.nuttall@gmail.com\" -d \"bitmemo.io\"", # Change "bitmemo.io" if using other website
                   "cd /etc/letsencrypt/live/bitmemo.io/;",
                   "sed -i '' **/*;", # This replaces all system links with their actual files
                   "mv cert.pem tls.crt;",

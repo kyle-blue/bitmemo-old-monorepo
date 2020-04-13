@@ -9,7 +9,7 @@ spec:
   rules:
     - http:
         paths: # No host specified. Matches all incoming requests
-          - path: /\.well-known/acme-challenge/* # This is regex
+          - path: /.well-known/acme-challenge/
             backend:
               serviceName: certificate-renewal
               servicePort: 80
