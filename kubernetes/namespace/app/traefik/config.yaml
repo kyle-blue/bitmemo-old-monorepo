@@ -35,7 +35,7 @@ spec:
             - name: https
               containerPort: 443
               hostPort: 443 # Expose to host TODO: Must only expose load balancers. Make sure this deployment is only on master nodes / load balancing nodes
-            - name: admin
+            - name: traefik
               containerPort: 8080
           volumeMounts:
             - mountPath: "/ssl"
@@ -66,13 +66,13 @@ spec:
   ports:
     - protocol: TCP # Expose to outside world
       port: 80
-      name: web
+      name: http
     - protocol: TCP
       port: 443
-      name: tls
+      name: https
     - protocol: TCP
       port: 8080
-      name: admin
+      name: traefik
   type: NodePort
 ---
 apiVersion: v1
