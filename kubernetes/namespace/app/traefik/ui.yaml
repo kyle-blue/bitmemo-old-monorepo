@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-    - host: base-traefik.bitmemo.io
+    - host: traefik.bitmemo.io
       http:
         paths:
           - backend:

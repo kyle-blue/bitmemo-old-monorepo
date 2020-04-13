@@ -31,8 +31,10 @@ spec:
           ports:
             - name: http
               containerPort: 80 # Expose to cluster
+              hostPort: 80 # Expose to host TODO: Must only expose load balancers. Make sure this deployment is only on master nodes / load balancing nodes
             - name: https
               containerPort: 443
+              hostPort: 443 # Expose to host TODO: Must only expose load balancers. Make sure this deployment is only on master nodes / load balancing nodes
             - name: admin
               containerPort: 8080
           volumeMounts:
@@ -64,11 +66,9 @@ spec:
   ports:
     - protocol: TCP # Expose to outside world
       port: 80
-      nodePort: 31000
       name: web
     - protocol: TCP
       port: 443
-      nodePort: 32000
       name: tls
     - protocol: TCP
       port: 8080
