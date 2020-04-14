@@ -1,44 +1,30 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: extensions/v1beta1
+kind: Ingress
 metadata:
   name: traefik-web-ui
   namespace: app
   annotations:
     kubernetes.io/ingress.class: traefik
+    ingress.kubernetes.io/auth-type: "basic"
+    ingress.kubernetes.io/auth-secret: "authsecret"
 spec:
-  entryPoints:
-    - https
-  # - http
-
-  routes:
-    - match: Host(`traefik.bitmemo.io`)
-      kind: Rule
-      services:
-        - name: traefik-ingress-service
-          port: 8080
-      # middlewares:
+  rules:
+    - host: traefik.bitmemo.io
+      http:
+        paths:
+          - backend:
+              serviceName: traefik-ingress-service
+              servicePort: 8080
   tls:
-    # certResolver: default
-    secretName: certificate-secret
-    # domains:
-    #   - main: bitmemo.io
+    - secretName: certificate-secret
+      hosts:
+        - traefik-ui.bitmemo.io
 ---
-# apiVersion: extensions/v1beta1
-# kind: Ingress
-# metadata:
-#   name: traefik-web-ui
-#   namespace: app
-#   annotations:
-#     kubernetes.io/ingress.class: traefik
-# spec:
-#   rules:
-#     - host: traefik.bitmemo.io
-#       http:
-#         paths:
-#           - backend:
-#               serviceName: traefik-ingress-service
-#               servicePort: 8080
-#   tls:
-#     - secretName: certificate-secret
-#       hosts:
-#         - traefik-ui.bitmemo.io
+apiVersion: v1
+kind: Secret
+metadata:
+  name: authsecret
+  namespace: app
+data:
+  users: >-
+    YmlnYm9pOiRhcHIxJERUQUlyVjBJJEpoSy9DbkpGMklqVVNRQzVrQjUySy8=

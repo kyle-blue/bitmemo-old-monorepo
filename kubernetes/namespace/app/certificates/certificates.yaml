@@ -1,21 +1,28 @@
+# LOCATION: /etc/letsencrypt/live/bitmemo.io/
+#
 # apiVersion: v1
 # kind: Secret
 # type: generic
 # metadata:
 #   name: certificate-secret
+#   namespace: app
 # data:
 #   # Generally cert.pem and privkey.pem are needed by webservers for https
-#   tls.crt: "" # empty since this will be filled by job
-#   tls.key: ""
-apiVersion: v1
-data:
-  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZTekNDQkRPZ0F3SUJBZ0lTQkNZczNkTnpmbnF3SlBMTmZiRW15em01TUEwR0NTcUdTSWIzRFFFQkN3VUEKTUVveEN6QUpCZ05WQkFZVEFsVlRNUll3RkFZRFZRUUtFdzFNWlhRbmN5QkZibU55ZVhCME1TTXdJUVlEVlFRRApFeHBNWlhRbmN5QkZibU55ZVhCMElFRjFkR2h2Y21sMGVTQllNekFlRncweU1EQTBNVE14TVRVd05UQmFGdzB5Ck1EQTNNVEl4TVRVd05UQmFNQlV4RXpBUkJnTlZCQU1UQ21KcGRHMWxiVzh1YVc4d2dnRWlNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFDK3pHdWtYb0hxRnZLY1NlTXg4bXNybmtKKzUzRWFqOU41NVdJUwprOFc4eWNUNVIxMExHUjVPUWlEYmE0Sm42bFpMN05KaXMvZFB0OVhjWUdzemxjWWR2cWFuU1JXR0hJZHNDZDFNCllBQ2p5Mm0vM3hSRWhPN21rVXpwRGpNRStmdnYvb3lXbjIyeE1udS81S2ZzMi91NnBFNitaVUd0S2dZT0ZpRDMKYTB2eW14UFZXcmhzRTRHRDFvY1RGR0VJUEt1RmQ0aUN5SHRsVnZpUHd0bWlOSWZENWNPRm9YQ0dGU1oyS2w0VApERTVtOHhLK3U0RFJkRlNSOGV4SDRBN0RCd25ZcitUOVEySm9LU2ZHbldCMzN4NG15ekVEbFN4ZUVFbzA4cDJGCllPNzB3RTJmcDFUb3NNTXdvY3ZzMnBIWktmRlNyOHZqVFhuaitjMjdnZmYwd2NveEFnTUJBQUdqZ2dKZU1JSUMKV2pBT0JnTlZIUThCQWY4RUJBTUNCYUF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQwpNQXdHQTFVZEV3RUIvd1FDTUFBd0hRWURWUjBPQkJZRUZJTHZJRkVzS3VBSE51NjI1bll6emF0a3V4K1JNQjhHCkExVWRJd1FZTUJhQUZLaEthbU1FZmQyNjV0RTV0NlpGWmUvenFPeWhNRzhHQ0NzR0FRVUZCd0VCQkdNd1lUQXUKQmdnckJnRUZCUWN3QVlZaWFIUjBjRG92TDI5amMzQXVhVzUwTFhnekxteGxkSE5sYm1OeWVYQjBMbTl5WnpBdgpCZ2dyQmdFRkJRY3dBb1lqYUhSMGNEb3ZMMk5sY25RdWFXNTBMWGd6TG14bGRITmxibU55ZVhCMExtOXlaeTh3CkZRWURWUjBSQkE0d0RJSUtZbWwwYldWdGJ5NXBiekJNQmdOVkhTQUVSVEJETUFnR0JtZUJEQUVDQVRBM0Jnc3IKQmdFRUFZTGZFd0VCQVRBb01DWUdDQ3NHQVFVRkJ3SUJGaHBvZEhSd09pOHZZM0J6TG14bGRITmxibU55ZVhCMApMbTl5WnpDQ0FRTUdDaXNHQVFRQjFua0NCQUlFZ2ZRRWdmRUE3d0IyQVBDVnBGbnlBTkdDUUJBdEw1T0lqcTFMCi9oMUg0NW5oMERTbXNLaXFqckp6QUFBQmNYT1hwVFFBQUFRREFFY3dSUUlnYWdycmMwRkhac01RRjVvNWFScmYKelRtVUt6RUVnUXBsdFR1NDk0L09RZk1DSVFESkNnVXFsMTNxcHhiNzl3bzN5QVdydnlod3Z3SXUveG90S3RCSgpsUHlzRFFCMUFMSWVCY3lMb3MyS0lFNkhadmtydVlvbElHZHIydnB3NTdKSlV5M3ZpNUJlQUFBQmNYT1hwU0FBCkFBUURBRVl3UkFJZ2FCZW42VWMxSTdEQkpBdWZqZDhZQTJSSXNGUHRacnVQNzh1aHUxaGprZlFDSUdkY2ljeGUKRTNrTnlKYlk5SURqSHpLaHE5TUxlRlovM1J0ei9nV2g2bkcvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFCYQoyUWZoRmxGVlR0ZTJudUFZWWpKbkRHR2xxVWMwRE9WSlBnK1Rad1FGRzRBZGVsQVc4dWFGZSthK1IwN1ByeEFKCk9heHpQczZYRVBZcnhNR1ZaMUJieDc2aGY2QmNLTjBHbU84Nzl6QlJCdDVvbzZUSDJJNXcwUXlXNkhnYzZmUloKb0dSSDBNN3U3S3FEY3dEVUJFOS91Q0FGZ1hyUm11TWMvS0ZyZDMvb3BWblhoRTdQVjZkUitPelBQUzRkTFJHYwpuRXNGR2xQUHowS1FQcVh4bU5YQUwrU2o5UWxsR21XOWhPMitkdmpVN1NkR1AxTWdMNjVWUkJUODlKaS9VcFR6ClBRN2NlRTM5R3VrMEw0NmdhWWJCRDdWWlBpUGhTYXpVNXkrSVFSVTBUTFNNMTNkbUUvU0dqK3ZxTkJPK2F6N0UKLzJEUEFSNERUY3l4MHYrT2l1TEkKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
-  tls.key: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRQyt6R3VrWG9IcUZ2S2MKU2VNeDhtc3Jua0orNTNFYWo5TjU1V0lTazhXOHljVDVSMTBMR1I1T1FpRGJhNEpuNmxaTDdOSmlzL2RQdDlYYwpZR3N6bGNZZHZxYW5TUldHSElkc0NkMU1ZQUNqeTJtLzN4UkVoTzdta1V6cERqTUUrZnZ2L295V24yMnhNbnUvCjVLZnMyL3U2cEU2K1pVR3RLZ1lPRmlEM2EwdnlteFBWV3Joc0U0R0Qxb2NURkdFSVBLdUZkNGlDeUh0bFZ2aVAKd3RtaU5JZkQ1Y09Gb1hDR0ZTWjJLbDRUREU1bTh4Syt1NERSZEZTUjhleEg0QTdEQnduWXIrVDlRMkpvS1NmRwpuV0IzM3g0bXl6RURsU3hlRUVvMDhwMkZZTzcwd0UyZnAxVG9zTU13b2N2czJwSFpLZkZTcjh2alRYbmorYzI3CmdmZjB3Y294QWdNQkFBRUNnZ0VCQUorT3AvMy9Jcm0ya3hEc0lWa2xsMFlVeFJzSFJXaW5HbnozdkxvNFpjWnAKSFpZeGZiZklPN1hLUzF2elhreTBoWkpjNjl1ckVJalQvYjZieTBxS1YvR0wvQ1l0VWhpalJ3U3NneXBacG05VApybzNNYWxDYXNvYVN3RFN0c1REYU5Ud1FMVlhRNFpTcjJSMHloTlBwYTJ3Nzk3WDFTNlVhWFpIdUk0ZUZiUy9sCjJTVDJxNWRhK0ZNQ3NoTDZPOHF0RGxqSXJFYVVRMzRtME41VFlmMEh6SzR2ME1JUU9jM3JzeXdFSy9ma1pZMVgKL0pPSHZzOFoxV0c5OVZUQTFzSVhMUGozaXRHdVpDSFk4dlh3aWxUbldCT0puTmZNSDJRc1NBdGdTNjk1L2s4TwprOC9wcUd4aHUxUzhGbW9Pcm9ySW1LWVBTNnlQZXhidXpsblE0K085d0tFQ2dZRUE3N0pCa21RSlVTbTAxTWM0CjVlSWdJQkVVaHZ4REdKWGFzL0RJNFJ3Y0lCemJ5RmVkU1lnYlBURFljOVNDQ29PSFdqak1PT0NrY2lHQk41cXQKVEFUTDRwOWd4TGYrMWJuZjhlZ0FRaFBjVW9ZOXNQYzlaWFF0U2dSK0lVT2FBdnFjNXl6VWhJZ2hIeHhFQmIzUQpqUmNsK3V4VkVNVFQrenV3YWZhTDVNOFIwVVVDZ1lFQXk4YTVtSFpEa2JjR0xkaXJKRWhGZWc5ODZCQUR3OG5OCjFDTXhkZ2cvNmVzQ1puNExmdXN4RWlTL1VkdEozUjRsb3gwTTBhZzRyQVlYOFNkVGRjdzFBcklnbUNhN2VZQWYKTkcra1ZyNlZZdHlDN0ZnTDJVS1FHNWRSbEJ1MXI4elRRcFVHOWE0R1M2b09lNTFwQmp5Rmp0Y1lMZkZZM1ZpcwpuV3FOYjVvN0pmMENnWUFtdUpvbEp1bm1aYUZqdWljejQ3cWkwMytJYXRuLzc3MWIwaXJ4U3BRMGo5VGxZVm4wClZmdG9nQ3FIVTY0S09zTXp6UGNZdlJsem9udjRXcEZpTldnbVhPN0orSnMvTlg2NjJtcW9RZ01XaGI4VGhtMHgKcFhubmVpQlNDVlNvNUlsU1F3aTF2RFAxamFCamVRMW1yWFdpT21sbmd4Um5nblgyT0REVExxeEhMUUtCZ0RsWApvSjZBbVI4R0M5MFczWUlHUEZiT3lPMWNwRktTRlRPZSs2b2xSQ2NGRk5YV25sR0d5WFk3bFFMcDNHMDJzSXluCi9oVjVhd2t0WmN0Y3I2VzBZeTV4QmE4TEp6SlhsWEJpQWpMT3lxYlpPcFpiYUdvb3l2aVlxa0l0VWdFNGVES0MKVVVVTlJZUkJSSFlRbzU4M3BMVy9YWFNBTit1QnFvRlpuSmROSlZ2WkFvR0JBTU5QNy9jVFN1bFVLQjBkUm1vVgpqUDVNaUVGYVQrS2xJbFV5UDZFNFZwU0xxQlFEK3pMVVFLSjh5WW9GYmgwbzlhakR0dnlLYmxxQzBiSDVZaUEyCmQzRU5JTDE1U2VHd09KK3h4SXNBbjJMYVJvR3lrWkFBUWk5aXlFVVJGS21NRlAyN3hFSkgzbVdkc2ZDTEhlODUKenV4bkNOUklKT3ZGdmd1TS93UWlJT09vCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K
-kind: Secret
-metadata:
-  name: certificate-secret
-  namespace: app
-type: Opaque
+#   cert.pem: ""
+#   chain.pem: ""
+#   fullchain.pem: ""
+#   privkey.pem: "" # empty since this will be filled by job
+#---
+# LOCATION: /etc/letsencrypt/renewal/bitmemo.io.conf
+#
+# apiVersion: v1
+# kind: Secret
+# type: generic
+# metadata:
+#   name: letsencrypt-config
+#   namespace: app
+# data:
+#   bitmemo.io.conf: ""
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -23,7 +30,7 @@ metadata:
   name: certificate-renewal
   namespace: app
 spec:
-  schedule: "0 */12 * * *" # Run once every 12 hours
+  schedule: "0 */3 * * *" # Run once every 3 hours
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   jobTemplate:
@@ -41,17 +48,16 @@ spec:
           containers:
             - name: certificate-renewal
               image: certbot/certbot:v1.3.0
-              command: ["/bin/sh", "-c"]
+              command: ["/bin/sh", "-c", "--"]
               # Below commands get certificate, and replace the old certificates in the secret
               # The issue is that this server is not exposed. After creating traefik I will get this working
 
               # Gonna need a traefik path for http://www.bitmemo.io/.well-known/acme-challenge to lead to here
               args: [
-                  "printf \"a\ny\n1\" | certbot certonly --verbose --standalone --test-cert -m \"kyle.blue.nuttall@gmail.com\" -d \"bitmemo.io\"", # Change "bitmemo.io" if using other website
-                  "cd /etc/letsencrypt/live/bitmemo.io/;",
-                  "sed -i '' **/*;", # This replaces all system links with their actual files
-                  "mv cert.pem tls.crt;",
-                  "mv privkey.pem tls.key;",
+                  # "printf \"a\ny\n1\" | certbot certonly --verbose --standalone --test-cert -m \"kyle.blue.nuttall@gmail.com\" -d \"bitmemo.io\"", # Change "bitmemo.io" if using other website
+                  # "cd /etc/letsencrypt/live/bitmemo.io/;",
+                  # "sed -i '' **/*;", # This replaces all system links with their actual files
+                  "while true; do sleep 30; done;",
                 ]
               # CREATE JSON BODY AND PUT IN CURL REQUEST
               #AUTH_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
