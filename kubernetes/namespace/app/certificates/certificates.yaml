@@ -50,7 +50,10 @@ spec:
               image: registry.gitlab.com/bigboiblue/bitmemo/cert-renewal:latest
               # Docker image get certificate, and replace the old certificates in the secret
               # The issue is that this server is not exposed. After creating traefik I will get this working
-              args: ["bitmemo.io"]
+              imagePullPolicy: Always
+              env:
+                - name: WEBSITE
+                  value: "bitmemo.io"
               # "while true; do sleep 30; done;",
               # CREATE JSON BODY AND PUT IN CURL REQUEST
               #AUTH_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
@@ -64,6 +67,8 @@ spec:
                   readOnly: false # We want to write to the certificate
               ports:
                 - containerPort: 80 # Expose port 80 to container
+          imagePullSecrets:
+            - name: registry-creds
           volumes:
             - name: certificate-volume
               secret:

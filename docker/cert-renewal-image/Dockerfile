@@ -9,4 +9,4 @@ RUN apk update && \
 COPY ./create_secrets /create_secrets
 COPY ./entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]

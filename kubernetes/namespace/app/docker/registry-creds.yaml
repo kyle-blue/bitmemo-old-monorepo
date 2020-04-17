@@ -1,0 +1,8 @@
+apiVersion: v1
+metadata:
+  name: registry-creds
+  namespace: app
+data:
+  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJyZWdpc3RyeS5naXRsYWIuY29tIjogewoJCQkiYXV0aCI6ICJZbWxuWW05cFlteDFaVHBSYld4dloyVjNhQ2d5TlRBMEtRPT0iCgkJfQoJfSwKCSJIdHRwSGVhZGVycyI6IHsKCQkiVXNlci1BZ2VudCI6ICJEb2NrZXItQ2xpZW50LzE5LjAzLjggKGxpbnV4KSIKCX0KfQ==
+kind: Secret
+type: kubernetes.io/dockerconfigjson
