@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/kubernetes/namespace/app/certificates/cert-renewal-image/create_secrets/venv"
+set -gx VIRTUAL_ENV "/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/docker/cert-renewal-image/create_secrets/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

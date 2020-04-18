@@ -1,12 +1,14 @@
-FROM python:3.7.7-alpine3.11
+FROM python:3.7.7
 
 LABEL maintainer="kyle.blue.nuttall@gmail.com"
 
-RUN apk update && \
-    apk upgrade && \
-    apk add certbot
-
 COPY ./create_secrets /create_secrets
 COPY ./entrypoint.sh /entrypoint.sh
+
+RUN apt update && \
+    apt upgrade && \
+    apt -y install certbot
+
+RUN /bin/bash -c "source /create_secrets/venv/bin/activate; pip3 install -r /create_secrets/requirements.txt"
 
 CMD ["/entrypoint.sh"]

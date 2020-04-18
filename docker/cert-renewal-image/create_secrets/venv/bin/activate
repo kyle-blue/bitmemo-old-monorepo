@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/kubernetes/namespace/app/certificates/cert-renewal-image/create_secrets/venv"
+VIRTUAL_ENV="/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/docker/cert-renewal-image/create_secrets/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

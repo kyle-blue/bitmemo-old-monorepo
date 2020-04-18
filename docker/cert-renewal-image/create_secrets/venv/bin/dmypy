@@ -1,8 +1,10 @@
-#!/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/kubernetes/namespace/app/certificates/cert-renewal-image/create_secrets/venv/bin/python
+#!/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/docker/cert-renewal-image/create_secrets/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
+
 from mypy.dmypy.client import console_entry
+
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
     sys.exit(console_entry())
