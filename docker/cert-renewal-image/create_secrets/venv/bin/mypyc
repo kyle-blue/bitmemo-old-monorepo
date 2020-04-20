@@ -1,4 +1,4 @@
-#!/Users/kyleblue/Documents/Workspace/Javascript/Projects/bitmemo/docker/cert-renewal-image/create_secrets/venv/bin/python3
+#!/home/bigboi/bitmemo/docker/cert-renewal-image/create_secrets/venv/bin/python3
 """Mypyc command-line tool.
 
 Usage:

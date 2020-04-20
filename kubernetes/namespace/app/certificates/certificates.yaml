@@ -1,28 +1,3 @@
-# LOCATION: /etc/letsencrypt/live/bitmemo.io/
-#
-# apiVersion: v1
-# kind: Secret
-# type: generic
-# metadata:
-#   name: certificate-secret
-#   namespace: app
-# data:
-#   # Generally cert.pem and privkey.pem are needed by webservers for https
-#   cert.pem: ""
-#   chain.pem: ""
-#   fullchain.pem: ""
-#   privkey.pem: "" # empty since this will be filled by job
-#---
-# LOCATION: /etc/letsencrypt/renewal/bitmemo.io.conf
-#
-# apiVersion: v1
-# kind: Secret
-# type: generic
-# metadata:
-#   name: letsencrypt-config
-#   namespace: app
-# data:
-#   bitmemo.io.conf: ""
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -55,31 +30,20 @@ spec:
           containers:
             - name: certificate-renewal
               image: registry.gitlab.com/bigboiblue/bitmemo/cert-renewal:latest
-              # Docker image get certificate, and replace the old certificates in the secret
-              # The issue is that this server is not exposed. After creating traefik I will get this working
               imagePullPolicy: Always
               env:
                 - name: WEBSITE
                   value: "bitmemo.io"
-              # "while true; do sleep 30; done;",
-              # CREATE JSON BODY AND PUT IN CURL REQUEST
-              #AUTH_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
-              #curl -v --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $AUTH_TOKEN" -X PUT https://kubernetes.default.svc/api/v1/namespaces/default/secrets/certificate-secret
-              # kubectl create secret generic certificate-secret \
-              # --from-file=./tls.key --from-file=./tls.crt --dry-run -o yaml |
-              # kubectl apply -f -
-              volumeMounts:
-                - name: certificate-volume
-                  mountPath: /etc/letsencrypt/live/bitmemo.io/ # And this
-                  readOnly: false # We want to write to the certificate
+                - name: "SERVER"
+                  value: "production"
+                - name: SUBDOMAINS
+                  value: "www traefik admin argocd jira jenkins mail"
+              # command: ["bash", "-c", "--"]
+              # args: ["while true; do sleep 30; done;"]
               ports:
                 - containerPort: 80 # Expose port 80 to container
           imagePullSecrets:
             - name: registry-creds
-          volumes:
-            - name: certificate-volume
-              secret:
-                secretName: certificate-secret
 ---
 apiVersion: v1
 kind: Service
