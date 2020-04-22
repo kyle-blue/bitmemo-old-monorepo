@@ -16,7 +16,6 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 
 kubectl create namespace build
 kubectl create namespace app
-kubectl create namespace argocd
 kubectl apply -Rf $SCRIPTPATH
 kubectl taint nodes --all node-role.kubernetes.io/master- # This is for calico setup
 kubectl apply -Rf $SCRIPTPATH # This is to get rid of creation order problems

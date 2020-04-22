@@ -8,7 +8,7 @@ metadata:
   namespace: build
 
 spec:
-  project: default
+  project: bitmemo
 
   # Source of the application manifests
   source:
@@ -22,7 +22,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc # Deploy to same cluster as argo is running in
-    namespace: bitmemo
+    namespace: app
 
   # Sync policy
   syncPolicy:

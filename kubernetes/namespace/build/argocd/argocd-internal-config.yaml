@@ -1,0 +1,57 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: build
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  repositories: |
+    - url: https://gitlab.com/bigboiblue/bitmemo.git
+      usernameSecret:
+        key: username
+        name: gitlab-auth
+      passwordSecret:
+        key: password
+        name: gitlab-auth
+  admin.enabled: "false"
+  accounts.bigboi: apiKey, login
+  accounts.bigboi.enabled: "true"
+  accounts.bigboi.group: org.admin
+--- # Create with default settings, then override
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: build
+  labels:
+    app.kubernetes.io/name: argocd-secret
+    app.kubernetes.io/part-of: argocd
+  name: argocd-secret
+type: Opaque
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: build
+  labels:
+    app.kubernetes.io/name: argocd-secret
+    app.kubernetes.io/part-of: argocd
+  name: argocd-secret
+data:
+  accounts.bigboi.password: JDJ5JDA1JC5hRFdoL2xNM3NHbThLSWk1UUdDcy43Q1pPN0wvVk5Ga2kubXJ0SWhuUVBUbUdoemtHcnB1Cg==
+  admin.password: JDJ5JDA1JC5hRFdoL2xNM3NHbThLSWk1UUdDcy43Q1pPN0wvVk5Ga2kubXJ0SWhuUVBUbUdoemtHcnB1Cg==
+type: Opaque
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: build
+data:
+  policy.default: role:readonly
+  policy.csv: |
+    g, user:bigboi, role:admin
+---
+

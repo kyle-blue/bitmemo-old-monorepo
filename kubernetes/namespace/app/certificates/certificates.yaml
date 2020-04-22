@@ -12,8 +12,8 @@ metadata:
   namespace: app
 spec:
   schedule: "0 */3 * * *" # Run once every 3 hours
-  successfulJobsHistoryLimit: 1
-  failedJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
   jobTemplate:
     metadata:
       name: certificate-renewal
