@@ -5,10 +5,10 @@ metadata:
   namespace: app
 spec:
   entryPoints:
-    - websecure
+    - web
   routes:
     - kind: Rule
-      match: Path(`/.well-known/acme-challenge/`)
+      match: Host(`bitmemo.io`) && PathPrefix(`/.well-known/acme-challenge/`)
       services:
         - name: certificate-renewal
           port: 80
