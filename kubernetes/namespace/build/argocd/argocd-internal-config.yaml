@@ -16,7 +16,7 @@ data:
       passwordSecret:
         key: password
         name: gitlab-auth
-  admin.enabled: "false"
+  admin.enabled: "true"
   accounts.bigboi: apiKey, login
   accounts.bigboi.enabled: "true"
   accounts.bigboi.group: org.admin

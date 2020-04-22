@@ -1,16 +1,15 @@
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: cert-ingress
+  name: certificate-renewal
   namespace: app
-  # annotations:
-  #   kubernetes.io/ingress.class: traefik
 spec:
-  rules:
-    - http:
-        paths: # No host specified. Matches all incoming requests
-          - path: /.well-known/acme-challenge/
-            backend:
-              serviceName: certificate-renewal
-              servicePort: 80
-  # tls: <-- Not required, this is to aquire the certificate
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Path(`/.well-known/acme-challenge/`)
+      services:
+        - name: certificate-renewal
+          port: 80
+  # tls: {} # Not required, this is certificate renewal
