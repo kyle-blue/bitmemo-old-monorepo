@@ -29,7 +29,7 @@ spec:
           serviceAccountName: certificate-renewal
           containers:
             - name: certificate-renewal
-              image: registry.gitlab.com/bigboiblue/bitmemo/cert-renewal:latest
+              image: registry.gitlab.com/bit-memo/deprecated/bitmemo-old-monorepo/cert-renewal:latest
               imagePullPolicy: Always
               env:
                 - name: WEBSITE

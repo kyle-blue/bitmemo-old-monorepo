@@ -12,7 +12,7 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://gitlab.com/bigboiblue/bitmemo.git
+    repoURL: https://gitlab.com/bit-memo/deprecated/bitmemo-old-monorepo.git
     targetRevision: master
     path: kubernetes/namespace/app
 

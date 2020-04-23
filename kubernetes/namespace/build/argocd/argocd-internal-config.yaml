@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   repositories: |
-    - url: https://gitlab.com/bigboiblue/bitmemo.git
+    - url: https://gitlab.com/bit-memo/deprecated/bitmemo-old-monorepo.git
       usernameSecret:
         key: username
         name: gitlab-auth

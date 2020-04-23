@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REGISTRY="registry.gitlab.com/bigboiblue/bitmemo"
+REGISTRY="registry.gitlab.com/bit-memo/deprecated/bitmemo-old-monorepo"
 NAME="cert-renewal"
 DIR=$(dirname "$0")
 cd "$DIR"
