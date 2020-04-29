@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-info-cm
+  namespace: app
+  labels:
+    group: default
+    version: v1
+    environment: unknown
+data:
+  domain: bitmemo
+  subdomains: "www traefik admin argocd jira jenkins mail"

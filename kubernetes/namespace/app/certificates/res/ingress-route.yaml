@@ -1,14 +1,13 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: certificate-renewal
-  namespace: app
+  name: cert-renewal-ir
 spec:
   entryPoints:
     - web
   routes:
     - kind: Rule
-      match: Host(`bitmemo.io`) && PathPrefix(`/.well-known/acme-challenge/`)
+      match: Host(`${{ DOMAIN }}`) && PathPrefix(`/.well-known/acme-challenge/`)
       services:
         - name: certificate-renewal
           port: 80

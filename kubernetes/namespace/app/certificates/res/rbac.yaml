@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cert-renewal-cronjob-sa
+automountServiceAccountToken: true
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: cert-renewal-role
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"] # // TODO: Add specific names here
+    verbs: ["create", "update", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: cert-renewal-rb
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: cert-renewal-role
+subjects:
+  - apiGroup: ""
+    kind: ServiceAccount
+    name: cert-renewal-cronjob-sa
+    namespace: ${{ NAMESPACE }}

@@ -1,0 +1,9 @@
+extends: base.kubevar.yaml
+
+common:
+  metadata.labels:
+    environment: production
+
+vars:
+  static:
+    ENVIRONMENT: production

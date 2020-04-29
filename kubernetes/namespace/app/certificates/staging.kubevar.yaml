@@ -1,0 +1,9 @@
+extends: base.kubevar.yaml
+
+common:
+  metadata.labels:
+    environment: staging
+
+vars:
+  static:
+    ENVIRONMENT: staging

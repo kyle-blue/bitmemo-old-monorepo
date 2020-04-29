@@ -1,0 +1,15 @@
+common:
+  metadata.namespace: app
+  metadata.labels:
+    service: cert-renewal
+
+vars:
+  static:
+    NAMESPACE: app
+    DOMAIN: bitmemo.io
+    SUBDOMAINS: "www traefik admin argocd jira jenkins mail"
+    ENVIRONMENT: staging
+    SCHEDULE: "0 */3 * * *" # Run once every 3 hours
+
+resources:
+  - res/*.yaml
